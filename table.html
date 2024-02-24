@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+      button {
+        display: block;
+        border-radius: 4px;
+        background-color: darkcyan;
+        border: none;
+        color: wheat;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-bottom: 50px;
+      }
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      button span:after {
+        content: "\00bb";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      button:hover span {
+        padding-right: 25px;
+      }
+
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      table {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 40%;
+      }
+      #content-table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #content-table td,
+      #content-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        color: white;
+      }
+
+      #content-table tr:nth-child(even) {
+        background-color: grey;
+      }
+
+      #content-table tr:hover {
+        background-color: #ddd;
+      }
+
+      #content-table th {
+        background-color: #04aa6d;
+        color: black;
+      }
+      #backButton {
+        float: left;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-image: url(images.jfif);
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <center>
+      <button id="toggle-table-button"><span>Show Table</span></button>
+    </center>
+    <table id="content-table" style="display: none">
+      <tr>
+        <th>NAME</th>
+        <th>QUALIFICATION</th>
+        <th>MAIL ID</th>
+        <th>PH NO</th>
+      </tr>
+      <tr>
+        <td>Priya</td>
+        <td>BCA(3rd year)</td>
+        <td>priya21@gmail.com</td>
+        <td>9845674320</td>
+      </tr>
+      <tr>
+        <td>Monisha</td>
+        <td>BCA(2nd year)</td>
+        <td>moni@gmail.com</td>
+        <td>9367236549</td>
+      </tr>
+      <tr>
+        <td>Tharani</td>
+        <td>BCA(3rd year)</td>
+        <td>tharani43@gmail.com</td>
+        <td>7856097698</td>
+      </tr>
+      <tr>
+        <td>Sriranjani</td>
+        <td>BCA(2nd year)</td>
+        <td>sri7865@gmail.com</td>
+        <td>9367236549</td>
+      </tr>
+      <tr>
+        <td>Raghasri</td>
+        <td>BCA(1st year)</td>
+        <td>rags@gmail.com</td>
+        <td>6754908723</td>
+      </tr>
+    </table>
+
+    <script>
+      // JavaScript to toggle table visibility
+      document
+        .getElementById("toggle-table-button")
+        .addEventListener("click", function () {
+          var table = document.getElementById("content-table");
+          if (table.style.display === "none") {
+            table.style.display = "table";
+            this.innerText = "Hide Table";
+          } else {
+            table.style.display = "none";
+            this.innerText = "Show Table";
+          }
+        });
+    </script>
+  </body>
+</html>

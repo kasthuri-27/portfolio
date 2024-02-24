@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clut</title>
+
+    <style>
+      #image-container{
+        margin-top: 50px;
+      }
+      button {
+        display: block;
+        border-radius: 4px;
+        background-color: darkcyan;
+        border: none;
+        color: wheat;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 50px;
+      }
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      button span:after {
+        content: "\00bb";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      button:hover span {
+        padding-right: 25px;
+      }
+
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      img,
+      audio,
+      video {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+      }
+
+   
+</style>
+    </style>
+  </head>
+  <body style="background-image: url(bg.avif); background-size: cover">
+    
+    <center><div id="image-container" style="display: none">
+      <img id="displayedImage" src="cat.jpg" />
+    </div>
+
+    <button id="show-image-button"><span>Image</span></button>
+
+    <script src="script_1.js"></script>
+
+    <div id="video-container" style="display: none">
+      <video
+        id="displayedvideo"
+        src="velgrow academy.mp4"
+        height="500"
+        width="500"
+        controls
+        type="mp4"
+      ></video>
+    </div>
+
+    <button id="show-video-button"><span>Video</span></button>
+</center>
+    <script src="script_1.js"></script>
+
+    <center><div id="audio-container" style="display: none">
+      <audio id="displayedaudio" src="C:\Users\livewire\Desktop\web technology\Responsive Portfolio Website\music.mpeg" controls type="mpeg"></audio>
+    </div>
+    <button id="show-audio-button"><span>Audio</span></button>
+    <button id="backButton" style="display: none"><span>Back</span></button>
+
+    <script src="script_1.js"></script>
+
+     <button id="open-table-button"><span>Table</span></button></center>
+
+    <script>
+      // JavaScript to open table page in another window
+      document.getElementById("open-table-button").addEventListener("click", function() {
+        window.open("table.html", "_blank");
+      });
+    </script>
+
+   
+   
+  </body>
+</html>
